@@ -4,10 +4,25 @@ class PeerService {
       this.peer = new RTCPeerConnection({
         iceServers: [
           {
-            urls: [
-              "stun:stun.l.google.com:19302",
-              "stun:global.stun.twilio.com:3478",
-            ],
+            urls: "stun:global.stun.twilio.com:3478",
+          },
+          {
+            urls: "turn:global.turn.twilio.com:3478?transport=udp",
+            username:
+              "851068581028298853b59024be54da4d6f6b03c4f2ea104141904347e53024dd",
+            credential: "LS2UHzspJ2MDtNORrATtlJfGXGSAoN/7ZbsW5hLz4y0=",
+          },
+          {
+            urls: "turn:global.turn.twilio.com:3478?transport=tcp",
+            username:
+              "851068581028298853b59024be54da4d6f6b03c4f2ea104141904347e53024dd",
+            credential: "LS2UHzspJ2MDtNORrATtlJfGXGSAoN/7ZbsW5hLz4y0=",
+          },
+          {
+            urls: "turn:global.turn.twilio.com:443?transport=tcp",
+            username:
+              "851068581028298853b59024be54da4d6f6b03c4f2ea104141904347e53024dd",
+            credential: "LS2UHzspJ2MDtNORrATtlJfGXGSAoN/7ZbsW5hLz4y0=",
           },
         ],
       });
